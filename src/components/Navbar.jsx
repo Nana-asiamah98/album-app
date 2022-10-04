@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  return (
-    <div>Navbar</div>
-  )
-}
+  const location = useLocation();
 
-export default Navbar
+  useEffect(() => {
+    console.log("Location Value => ", location.state)
+  },[]);
+
+
+  return <div>Navbar</div>;
+};
+
+export default Navbar;
