@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import SearchInput from "./SearchInput";
 
 const Navbar = ({
@@ -12,7 +13,7 @@ const Navbar = ({
       <div className="lg:text-center">
         <div>
           <h2 className="text-[52px] text-indigo-50-600 font-serif">
-            {navTitle}
+            <Link to={"/"}>{navTitle}</Link>
           </h2>
         </div>
         <div className="relative mt-1 items-center rounded-md ">

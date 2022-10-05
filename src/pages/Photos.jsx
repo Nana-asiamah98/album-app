@@ -15,6 +15,7 @@ const Photos = () => {
   const [search, setSearch] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [image, setImage] = useState({});
 
   const fetchAlbumPhotos = async () => {
     const albumId = param.albumId;
@@ -42,6 +43,12 @@ const Photos = () => {
 
   const displayModal = (photo) => {
     setShowModal(!showModal);
+    setImage(photo);
+  };
+
+  const closeModal = () => {
+    setShowModal(!showModal);
+    document.body.style.overflow = "unset";
   };
 
   useEffect(() => {
@@ -76,9 +83,9 @@ const Photos = () => {
                     className="h-full w-full object-cover object-center group-hover:opacity-75"
                   />
                 </div>
-                <p className="mt-1 text-lg font-light text-gray-900">
+                <span className="mt-1 text-lg font-light text-gray-900">
                   <Italicizer word={val.title} search={search} />
-                </p>
+                </span>
               </Link>
             ))
           ) : (
@@ -88,7 +95,9 @@ const Photos = () => {
           )}
         </div>
       </div>
-      {showModal ? <Modal currModal={showModal} /> : null}
+      {showModal ? (
+        <Modal image={image} showModal={showModal} closeModal={closeModal} />
+      ) : null}
     </div>
   );
 };
