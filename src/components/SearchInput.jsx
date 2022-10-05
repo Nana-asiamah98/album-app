@@ -20,6 +20,7 @@ const SearchInput = ({ handleSubmit, search, placeholder }) => {
             placeholder={`Search for ${placeholder}`}
             type={"text"}
             name="search"
+            data-testid="searchField"
             onChange={(e) => search(e.target.value)}
           />
         </label>

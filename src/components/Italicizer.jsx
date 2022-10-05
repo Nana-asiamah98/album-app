@@ -12,7 +12,7 @@ const Italicizer = ({ word, search }) => {
 
     const structuredSentence = splittedWords.map((__main, ind) => {
       return (
-        <span key={ind}>
+        <span key={ind} data-testid="italicizedWordTest">
           {" "}
           {filteredWords.includes(__main) ? (
             <em>

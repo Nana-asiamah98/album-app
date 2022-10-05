@@ -67,7 +67,10 @@ const Gallery = () => {
                       className="h-full w-full object-cover object-center group-hover:opacity-75"
                     />
                   </div>
-                  <p className="mt-1 text-lg font-light text-gray-900">
+                  <p
+                    data-testid="albumText"
+                    className="mt-1 text-lg font-light text-gray-900"
+                  >
                     <Italicizer word={val.title} search={search} />
                   </p>
                 </Link>
