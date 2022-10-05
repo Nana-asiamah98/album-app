@@ -1,6 +1,6 @@
 import { React } from "react";
 
-const Italicizer = ({ word, search}) => {
+const Italicizer = ({ word, search }) => {
   const italicizeWords = (word) => {
     if (search === "") return word;
 
@@ -13,7 +13,14 @@ const Italicizer = ({ word, search}) => {
     const structuredSentence = splittedWords.map((__main, ind) => {
       return (
         <span key={ind}>
-          {filteredWords.includes(__main) ? <em> {__main} </em> : __main}
+          {" "}
+          {filteredWords.includes(__main) ? (
+            <em>
+              <b> {__main} </b>
+            </em>
+          ) : (
+            __main
+          )}
         </span>
       );
     });
