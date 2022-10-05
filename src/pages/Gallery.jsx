@@ -28,6 +28,12 @@ const Gallery = () => {
     setFilteredData([...result]);
   };
 
+  const onSearchChange = (value) => {
+    setSearch(value);
+    const result = filteredWords(album, search);
+    setFilteredData([...result]);
+  };
+
   useEffect(() => {
     fetchAlbums();
   }, []);
@@ -35,7 +41,7 @@ const Gallery = () => {
   return (
     <div>
       <h1>Gallery</h1>
-      <SearchInput handleSubmit={handleSubmit} search={setSearch}/>
+      <SearchInput handleSubmit={handleSubmit} search={onSearchChange} />
       <ul>
         {filteredData.length > 0 ? (
           filteredData.map((val, ind) => (

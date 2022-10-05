@@ -31,13 +31,19 @@ const Photos = () => {
     setFilteredData([...result]);
   };
 
+  const onSearchChange = (value) => {
+    setSearch(value);
+    const result = filteredWords(photos, search);
+    setFilteredData([...result]);
+  };
+
   useEffect(() => {
     fetchAlbumPhotos();
   }, []);
   return (
     <div>
       <h1>Photos for Album {param.albumId}</h1>
-      <SearchInput handleSubmit={handleSubmit} search={setSearch} />
+      <SearchInput handleSubmit={handleSubmit} search={onSearchChange} />
 
       <div>
         <ul>
