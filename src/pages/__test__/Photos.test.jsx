@@ -8,18 +8,17 @@ import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom/extend-expect";
 import { MemoryRouter } from "react-router-dom";
 import axios from "axios";
-import Gallery from "../Gallery";
 import Photos from "../Photos";
 
-describe("Gallery Test", () => {
-  test("Page Title As My Gallery", () => {
+describe("Photo Test", () => {
+  test("Page Title", () => {
     render(
       <MemoryRouter>
-        <Gallery />
+        <Photos />
       </MemoryRouter>
     );
 
-    expect(screen.getByText("My Gallery")).toBeInTheDocument("My Gallery");
+    expect(screen.getByText("No Result ...")).toBeInTheDocument();
   });
 
   describe("Search Album", () => {
@@ -29,19 +28,19 @@ describe("Gallery Test", () => {
           {
             userId: 1,
             id: 1,
-            title: "Album1",
+            title: "Image 1",
           },
           {
             userId: 1,
             id: 2,
-            title: "Album2",
+            title: "Image 2",
           },
         ],
       });
 
       render(
         <MemoryRouter>
-          <Gallery />
+          <Photos />
         </MemoryRouter>
       );
 
@@ -49,7 +48,7 @@ describe("Gallery Test", () => {
       expect(screen.getByText("No Result ...")).toBeInTheDocument();
 
       await waitFor(() => {
-        const testAlbums = screen.getAllByTestId("albumText");
+        const testAlbums = screen.getAllByTestId("phototext");
         expect(testAlbums).toHaveLength(2);
       });
     });
@@ -60,19 +59,19 @@ describe("Gallery Test", () => {
           {
             userId: 1,
             id: 1,
-            title: "Album 1 Sweet",
+            title: "Image 1",
           },
           {
             userId: 1,
             id: 2,
-            title: "Album2",
+            title: "Image 2 Sweet",
           },
         ],
       });
 
       render(
         <MemoryRouter>
-          <Gallery />
+          <Photos />
         </MemoryRouter>
       );
 
@@ -85,7 +84,7 @@ describe("Gallery Test", () => {
       userEvent.type(inputEl, "Sweet");
 
       await waitFor(() => {
-        const testAlbums = screen.getAllByTestId("albumText");
+        const testAlbums = screen.getAllByTestId("phototext");
         expect(testAlbums).toHaveLength(1);
       });
     });
@@ -93,7 +92,7 @@ describe("Gallery Test", () => {
     test("No Albums ", () => {
       render(
         <MemoryRouter>
-          <Gallery />
+          <Photos />
         </MemoryRouter>
       );
 

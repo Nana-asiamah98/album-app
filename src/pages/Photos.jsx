@@ -83,7 +83,10 @@ const Photos = () => {
                     className="h-full w-full object-cover object-center group-hover:opacity-75"
                   />
                 </div>
-                <span className="mt-1 text-lg font-light text-gray-900">
+                <span
+                  data-testid="phototext"
+                  className="mt-1 text-lg font-light text-gray-900"
+                >
                   <Italicizer word={val.title} search={search} />
                 </span>
               </Link>

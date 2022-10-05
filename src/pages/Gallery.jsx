@@ -20,7 +20,7 @@ const Gallery = () => {
       setAlbum([...response]);
       setFilteredData([...response]);
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -59,7 +59,12 @@ const Gallery = () => {
           <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {filteredData.length > 0 ? (
               filteredData.map((val, ind) => (
-                <Link key={ind} to={`${ind + 1}/photos`} className="group">
+                <Link
+                  key={ind}
+                  to={`${ind + 1}/photos`}
+                  data-testid="albumtest"
+                  className="group"
+                >
                   <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                     <img
                       src={avatar(`${ind + 1}`)}
@@ -67,12 +72,12 @@ const Gallery = () => {
                       className="h-full w-full object-cover object-center group-hover:opacity-75"
                     />
                   </div>
-                  <p
+                  <span
                     data-testid="albumText"
                     className="mt-1 text-lg font-light text-gray-900"
                   >
                     <Italicizer word={val.title} search={search} />
-                  </p>
+                  </span>
                 </Link>
               ))
             ) : (
