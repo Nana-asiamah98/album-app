@@ -3,6 +3,8 @@
 The Gallery App displays a grid of albums, with each album containing a collection of images.
 This Application was built using Vite,Reactjs and Tailwind.
 
+# DEMO https://dainty-klepon-830a15.netlify.app/
+
 ## How To Start The Project
 
 - Ensure you have NodeJs 16+ installed on your machine
