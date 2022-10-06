@@ -2,15 +2,15 @@
 
 ### Searching for An Photo Or Album
 
-- Trade-Off : It was puzzling with this section. I wanted the user to search for all images in the presented set of albums but it was confusing. First I had to consider the time it would take to fetch all the images and store them in a localStorage and access them by just fetching from the localStorage. I considered the User's experience. For instance, when a User searches for a photo and select a photo, he should be able to know the Album of the photo.
-- Assumptions : From my analysis, I considered creating two search fields. One will be at the Album Page and the other will be at the Photos Page. You can serach for your album when you visit your Album. The same applies to the Photos page.
+- Trade-Off : This portion was perplexing. I intended the user to search for all photographs in the collection of albums displayed, however it was perplexing. I had to first assess how long it would take to collect all of the photos, store them in a localStorage, and then retrieve them by just retrieving from the localStorage. I thought about the User's experience. For example, when a user looks for and selects a photo, he should be able to see the photo's Album.
+- Assumptions : Based on my research, I proposed adding two search fields. One will be on the Album Page, the other on the Photos Page. When you visit your Album, you may search for it. The same is true for the Photos page.
 
 ### Thumbnails for Photos and Album
 
-- Trade Off : In the Album page, I realized the endpoint didn't provide an endpoint to display a thumbnail for an album. The photos endpoint had it defined so it was easy to implement.
-- Assumptions : So included a Third Party API(https://ui-avatar.com/) to generate a thumbnail based on the letter A; standing for an Album and a number; signifying the album number;
+- Trade Off : On the Album page, I saw that the endpoint did not give an endpoint for displaying an album thumbnail. It was described in the images endpoint, so it was simple to implement.
+- Assumptions : So a Third Party API (https://ui-avatar.com/) was used to produce a thumbnail based on the letter A, which stands for Album, and a number, which represents the album number.
 
 ### Structuring Of Photos and Album
 
-- Trade-Off : Paginated or not?? This was a hard decision to select when I was designing these pages. Would the User love to scroll through the set of albums or photo or he/she wants it paginated.
-- Assuptions : I left the page to have a scrollable such that the user can view the set of Albums and Photos without any hesitation of either a next or previous page.
+- Trade-Off : Is it necessary to paginate? When I began designing these pages, I had to make a difficult decision. Would the user like to navigate through the collection of albums or photos, or would he/she prefer it to be paginated?
+- Assuptions : I left the page scrollable so that the user may examine the set of Albums and Photos without having to navigate to the next or previous page.
