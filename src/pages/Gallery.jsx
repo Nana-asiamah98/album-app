@@ -19,9 +19,7 @@ const Gallery = () => {
       const response = await getResource(AlBUM_URL);
       setAlbum([...response]);
       setFilteredData([...response]);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const handleSubmit = (e) => {

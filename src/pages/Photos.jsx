@@ -24,9 +24,7 @@ const Photos = () => {
       const response = await getResource(URL);
       setPhotos([...response]);
       setFilteredData([...response]);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const handleSubmit = (e) => {

@@ -42,6 +42,7 @@ const Modal = ({ showModal, image, closeModal }) => {
           <div className="p-6 space-y-6 flex  ">
             <div className="max-w-screen-lg mx-auto pb-10 justify-center">
               <img
+                data-testid="modalImage"
                 src={image.url}
                 alt={image.title}
                 className="object-none object-center bg-yellow-300"
